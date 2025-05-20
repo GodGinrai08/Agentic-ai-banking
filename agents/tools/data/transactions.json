@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2024-05-01",
+    "amount": 5000,
+    "description": "Grocery Store"
+  },
+  {
+    "date": "2024-05-02",
+    "amount": 15000,
+    "description": "Crypto Investment"
+  },
+  {
+    "date": "2024-05-03",
+    "amount": 12000,
+    "description": "Online Casino"
+  }
+]
