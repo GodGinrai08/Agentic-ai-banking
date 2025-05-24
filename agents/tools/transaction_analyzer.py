@@ -42,7 +42,11 @@ def load_transactions(path=None):
         # Return DataFrame with hardcoded data as ultimate fallback
         return pd.DataFrame(TRANSACTION_DATA)
 
-def analyze_transactions(df):
+def analyze_transactions(state):
+    transactions = state.get("transactions", [])
+    if not transactions:
+        return {"insights": ["No transactions available."]}
+    df = pd.DataFrame(transactions)
     """Analyze transactions for insights"""
     insights = []
     
@@ -64,7 +68,7 @@ def analyze_transactions(df):
     if not risky.empty:
         insights.append(f"⚠️ Potential risky transactions: {len(risky)}")
     
-    return insights
+    return {"insights": insights}  
 
 def analyze_user_transactions(tool_input=None) -> str:
     """Analyze user transactions from a file path or use default data"""
